@@ -256,7 +256,7 @@ process.stdout.write("Generating Images\n");
             }
             copyFileSync(national_path, national_destination_path);
             resize_command = "convert \"" + elevation_profile_path + "\" -resize x300 -quality " + resize_quality + " \"" + elevation_profile_destination_path + "\"";
-            execSync(resize_command);
+            //execSync(resize_command); // elevation profiles are no longer included, so don't resize
             image_files = fs.readdirSync(walk_fullpath);
             for(y = 0; y < image_files.length; y++){
                 image_file = image_files[y];
